@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <?php
-    $a='';
-    $b='';
-    $c='';
-    if(isset($_POST['txt']))
+    $id='';
+    $uname='';
+    $lname='';
+    if(isset($_POST['btn']))
     {
-        $a=$_POST['txt'];
-        $b=$_POST['txtno1'];
-        $c=$_POST['txtno2'];
+        $id=$_POST['txtid'];
+        $uname=$_POST['txtuname'];
+        $lname=$_POST['txtpwd'];
         $conn=mysqli_connect("localhost","root","","member");
-        $qry="update member_table set username='$b',password='$c' where mid='$a'";
+        $qry="update member_table set username='$uname',password='$lname' where mid='$id'";
         echo $qry;
         $result=$conn->query($qry);
         if($result)
@@ -27,9 +27,9 @@
 ?>
 <body>
     <form action="" method="post">
-        <span>Enter id you want to update</span><input type="text" name="txt" placeholder="ID"><br>
-        <span>Enter updated name</span><input type="text" name="txtno1" placeholder="Username"><br>
-        <span>Enter updated password</span><input type="text" name="txtno2" placeholder="Password"><br>
+        <span>Enter id you want to update</span><input type="text" name="txtid" placeholder="ID"><br>
+        <span>Enter updated name</span><input type="text" name="txtuname" placeholder="Username"><br>
+        <span>Enter updated password</span><input type="text" name="txtpwd" placeholder="Password"><br>
         <input type="submit" name="btn">
     </form>
 </body>
