@@ -8,12 +8,14 @@
 </head>
 <?php
     $a="";
+    $b="";
     $prt="";
     if(isset($_POST['txtnam']))
     {
         $a=$_POST['txtnam'];
+        $b=$_POST['txtpsd'];
         $conn=mysqli_connect("localhost","root","","member");
-        $qry="select * from member_table where username='$a'";
+        $qry="select * from member_table where username='$a' and password='$b'";
         $result=$conn->query($qry);
         $table="<table border =5><th>MID</th><th>Username</th><th>Password</th><th>Date</th><th>FName</th><th>LName</th>";
         $cnt=mysqli_num_rows($result);
@@ -38,7 +40,8 @@
 ?>
 <body>
     <form action="" method="post">
-        <input type="text" name="txtnam" placeholder="Enter name">
+        <input type="text" name="txtnam" placeholder="Enter name" value="<?php echo $a?>">
+        <input type="password" name="txtpsd" placeholder="Enter password" value="<?php echo $b?>">
         <input type="submit" name="btn">
         <?php echo $prt ?>
     </form>
