@@ -8,7 +8,7 @@
 </head>
     <?php
         $conn=mysqli_connect("localhost","root","","dbdemo");
-        $limit=3;
+        $limit=6;
         $page=$_GET['page'];
         $offset=($page-1)*$limit;
         $qry="select * from emp limit $offset,$limit";
@@ -36,7 +36,7 @@
             {
                 $total_row=mysqli_num_rows($result1);
                 $total_pages=ceil($total_row/$limit);
-                for($i=1;$i<$total_pages;$i++)
+                for($i=1;$i<=$total_pages;$i++)
                 {
                     echo"<a href='db16.php?page=$i'>$i</a>";
                 }
