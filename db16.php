@@ -8,7 +8,7 @@
 </head>
     <?php
         $conn=mysqli_connect("localhost","root","","dbdemo");
-        $limit=6;
+        $limit=3;
         $page=$_GET['page'];
         $offset=($page-1)*$limit;
         $qry="select * from emp limit $offset,$limit";
