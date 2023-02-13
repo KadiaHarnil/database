@@ -9,7 +9,11 @@
     <?php
         $conn=mysqli_connect("localhost","root","","dbdemo");
         $limit=3;
-        $page=$_GET['page'];
+        if(isset($_GET['page']))
+            $page=$_GET['page'];
+        else    
+            $page="1";
+
         $offset=($page-1)*$limit;
         $qry="select * from emp limit $offset,$limit";
         $result=mysqli_query($conn,$qry);
