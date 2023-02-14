@@ -12,7 +12,8 @@
 
     <?php
     $a = '';
-    if (isset($_POST['btn']))//if we press submit btn then and only this condition will executed {
+    if (isset($_POST['btn']))//if we press submit btn then and only this condition will executed
+     {
         $a = $_POST["txtno1"];
 
         $cnn = mysqli_connect("localhost", "root", "", "dbdemo");
