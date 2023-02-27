@@ -17,7 +17,7 @@
         $a = $_POST["txtno"];
 
         $cnn = mysqli_connect("localhost", "root", "", "dbdemo");
-        $qry = "SELECT * FROM employee WHERE Gender = '$a'";
+        $qry = "SELECT * FROM emp WHERE Gender = '$a'";
         // echo $qry;
         $result = $cnn->query($qry);
         $cnt = mysqli_num_rows($result);
